@@ -13,19 +13,18 @@ public class BuildHeap {
 
 		for (int i = len / 2 - 1; i >= 0; i--) {
 			// call for Min or Max heap based on the requirement
-			minHeapify(arr, i);
+			minHeapify(arr, i, len);
 		}
 
 	}
 
-	public void minHeapify(int[] arr, int parent) {
+	public void minHeapify(int[] arr, int parent, int len) {
 		/**
 		 * minHeapify method construct the element from the root by comparing parent
 		 * with its left or right child so the root always smaller compared to its
 		 * children left child is "2i+1" , right child "2i+2" where i is the parent
 		 **/
 
-		int len = arr.length;
 		while (parent < len) {
 			int left = 2 * parent + 1;
 			int right = 2 * parent + 2;
