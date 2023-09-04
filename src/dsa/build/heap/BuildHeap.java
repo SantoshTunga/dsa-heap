@@ -3,13 +3,12 @@ package dsa.build.heap;
 public class BuildHeap {
 
 	/** in this problem we need to construct a heap from the given array **/
-	public void heapify(int[] arr) {
+	public static void heapify(int[] arr, int len) {
 		/**
 		 * the given array is a non heap , so we need to construct the heap from the
 		 * left side right most element to get the left side right most element from the
 		 * parent node is (n/2)-1 where n is length of the array
 		 ***/
-		int len = arr.length;
 
 		for (int i = len / 2 - 1; i >= 0; i--) {
 			// call for Min or Max heap based on the requirement
@@ -18,7 +17,7 @@ public class BuildHeap {
 
 	}
 
-	public void minHeapify(int[] arr, int parent, int len) {
+	public static void minHeapify(int[] arr, int parent, int len) {
 		/**
 		 * minHeapify method construct the element from the root by comparing parent
 		 * with its left or right child so the root always smaller compared to its
@@ -52,10 +51,22 @@ public class BuildHeap {
 		}
 	}
 
-	public void print(int[] arr) {
+	public static void print(int[] arr) {
 		System.out.println(" all the elements of the Heap");
 
 		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+	}
+
+	public static void print(int[] arr, int len) {
+
+		if (len > arr.length) {
+			System.out.println(" the given length is greater the array  ");
+			return;
+		}
+		System.out.println(" all the elements of the Heap");
+		for (int i = 0; i < len; i++) {
 			System.out.println(arr[i]);
 		}
 	}
